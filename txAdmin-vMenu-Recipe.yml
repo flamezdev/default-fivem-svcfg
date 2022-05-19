@@ -1,0 +1,31 @@
+$engine: 3
+$onesync: on
+name: vMenu CFX Default
+version: 3.3.0
+author: Tabarra & Flamez
+description: Recipe for the vMenu & base resources required to run a minimal FiveM server.
+
+tasks: 
+  # Download default CFX resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: master
+    subpath: resources
+    dest: ./resources
+
+  # Download default server.cfg
+  - action: download_file
+    url: https://raw.githubusercontent.com/flamezdev/default-fivem-svcfg/main/vmenu-server.cfg
+    path: ./server.cfg
+    
+  - action: download_file
+  	url: https://github.com/TomGrobbe/vMenu/releases/download/v3.5.0/vMenu-v3.5.0.zip
+    path: ./tmp/vmenu.zip
+    
+  - action: unzip
+    dest: ./resources/vMenu
+    src: ./tmp/vmenu.zip
+    
+  # Clean up
+  - action: remove_path
+    path: ./tmp
