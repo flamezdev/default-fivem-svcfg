@@ -2,8 +2,8 @@ $engine: 3
 $onesync: on
 name: vMenu CFX Default
 version: 3.3.0
-author: Tabarra & Flamez
-description: Recipe for the vMenu & base resources required to run a minimal FiveM server.
+author: Tabarra, Flamez
+description: Recipe for the vMenu base resources required to run a minimal FiveM server.
 
 tasks: 
   # Download default CFX resources
